@@ -21,7 +21,7 @@
         public override void ExibirInfo()
         {
             Console.WriteLine("--- Dados do Contrato ---");
-            Console.WriteLine($"CNPJ: {Cnpj}");
+            Console.WriteLine($"CNPJ do Contrante: {Cnpj}");
             Console.WriteLine($"Inscrição Estadual: {InscricaoEstadual}");
             base.ExibirInfo();
         }

@@ -52,7 +52,7 @@
         public override void ExibirInfo()
         {
             Console.WriteLine("--- Dados do Contrato ---");
-            Console.WriteLine($"CPF: {Cpf}");
+            Console.WriteLine($"CPF do Contratante: {Cpf}");
             Console.WriteLine($"Idade Contratante: {CalcularIdade()}");
             base.ExibirInfo();
         }
