@@ -14,11 +14,11 @@
         public virtual void ExibirInfo()
         {
             string unidadePrazo = Prazo > 1 ? "meses" : "mês";
-            Console.WriteLine($"Id: {IdContrato}");
+            Console.WriteLine($"Número do contrato: {IdContrato}");
             Console.WriteLine($"Contratante: {Contratante}");
             Console.WriteLine($"Valor Total: R${Valor.ToString("F")}");
             Console.WriteLine($"Prazo: {Prazo} {unidadePrazo}");
-            Console.WriteLine($"Prestação: R${ CalcularPrestação().ToString("F")}");
+            Console.WriteLine($"Prestação: R${ CalcularPrestação().ToString("F")}\n");
         }
     }
 }

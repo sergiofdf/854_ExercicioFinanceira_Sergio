@@ -10,7 +10,9 @@
             Contratante = contratante;
             Valor = valor;
             Prazo = prazo;
-            Cpf = cpf;
+            string cpf2 = cpf.Replace(".", "");
+            string cpf3 = cpf2.Replace("-", "");
+            Cpf = cpf3;
             DataNascimento = dataNascimento;
         }
         public override decimal CalcularPrestação()
@@ -51,7 +53,7 @@
         }
         public override void ExibirInfo()
         {
-            Console.WriteLine("--- Dados do Contrato ---");
+            Console.WriteLine("\n--- Dados do Contrato ---");
             Console.WriteLine($"CPF do Contratante: {Cpf}");
             Console.WriteLine($"Idade Contratante: {CalcularIdade()}");
             base.ExibirInfo();

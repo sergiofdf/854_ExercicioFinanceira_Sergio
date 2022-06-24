@@ -9,10 +9,14 @@
         {
             IdContrato = Guid.NewGuid();
             Contratante = contratante;
-            InscricaoEstadual = inscricaoEstadual;
+            string inscricaoEstadual2 = inscricaoEstadual.Replace(".", "");
+            InscricaoEstadual = inscricaoEstadual2;
             Valor = valor;
             Prazo = prazo;
-            Cnpj = cnpj;
+            string cnpj2 = cnpj.Replace(".", "");
+            string cnpj3 = cnpj2.Replace("-", "");
+            string cnpj4 = cnpj3.Replace("/", "");
+            Cnpj = cnpj4;
         }
         public override decimal CalcularPrestação()
         {
@@ -20,7 +24,7 @@
         }
         public override void ExibirInfo()
         {
-            Console.WriteLine("--- Dados do Contrato ---");
+            Console.WriteLine("\n--- Dados do Contrato ---");
             Console.WriteLine($"CNPJ do Contrante: {Cnpj}");
             Console.WriteLine($"Inscrição Estadual: {InscricaoEstadual}");
             base.ExibirInfo();
