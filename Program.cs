@@ -1,12 +1,14 @@
 ﻿using _854_ExercicioFinanceira_Sergio;
 
-ControlaSistema();
+List<Contrato> contratos = new();
+ExecutaPrograma();
 
-void ControlaSistema()
+void ExecutaPrograma()
 {
     int escolhaUsuario = IniciaPrograma();
     Console.Clear();
     Contrato contrato = CriaContrato(escolhaUsuario);
+    contratos.Add(contrato);
     contrato.ExibirInfo();
     EncerraPrograma();
 }
@@ -49,7 +51,12 @@ Contrato CriaContrato(int tipoCadastro)
         DateTime dataNascimento = Validacoes.ConsoleData();
         Console.Clear();
         ContratoPessoaFisica contratoPf = new(nomeContratante, valorContrato, prazoContrato, cpfDigitado, dataNascimento);
-
+        if (contratoPf.CalcularIdade() < 18)
+        {
+            Console.WriteLine("Não podemos realizar contrato de financiamento para menores de idade!\n");
+            EncerraPrograma();
+            Environment.Exit(0);
+        }
         return contratoPf;
     }
     else
@@ -90,7 +97,7 @@ Deseja Encerrar o programa?
     else
     {
         Console.Clear();
-        ControlaSistema();
+        ExecutaPrograma();
     }
 }
 
